@@ -1,0 +1,60 @@
+[project]
+name = "bme688"
+dynamic = [
+    "version",
+]
+dependencies = [
+    "typed-registers ~= 0.2.0",
+]
+description = "A typed, register-accurate Python driver for the Bosch BME688 environmental sensor."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Joshua B. Bussdieker", email = "jbussdieker@gmail.com" },
+]
+maintainers = [
+    { name = "Joshua B. Bussdieker", email = "jbussdieker@gmail.com" },
+]
+classifiers = [
+    "Topic :: Scientific/Engineering :: Instrument Drivers",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Typing :: Typed",
+]
+keywords = [
+    "bme688",
+]
+license = "MIT"
+
+[project.scripts]
+bme688 = "bme688.cli:main"
+
+[project.optional-dependencies]
+i2c = ["smbus2"]
+cli = ["click", "smbus2"]
+dev = ["mypy"]
+
+[project.urls]
+Homepage = "https://github.com/jbussdieker/bme688"
+Documentation = "https://github.com/jbussdieker/bme688/blob/main/README.md"
+Repository = "https://github.com/jbussdieker/bme688"
+Issues = "https://github.com/jbussdieker/bme688/issues"
+Changelog = "https://github.com/jbussdieker/bme688/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = [
+    "setuptools",
+    "setuptools-scm",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
